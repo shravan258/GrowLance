@@ -14,7 +14,7 @@ const uploadRoutes = require('./routes/uploadRoutes');
 const cartRoutes = require('./routes/CartRoutes');
 const OrderRoutes = require('./routes/OrderRoutes');
 const stripe = require('stripe')(
-  'sk_test_51JlTROSDewrnjya5zwyH4pAkBh7ddbkBrwIQoAO49NNRgSFD4CNax70fVoZG7tCLL2HtPhCmwWCSoSW9tzdbyvyk00TWl79qAk'
+ process.env.SECRET_TEST_KEY
 );
 
 require('dotenv').config();
