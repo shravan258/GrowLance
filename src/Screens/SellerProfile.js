@@ -28,7 +28,7 @@ const SellerProfile = () => {
     const file = e.target.files[0];
     const formData = new FormData();
     formData.append('file', file);
-    formData.append('upload_preset', 'n9ccgc2q');
+    formData.append('upload_preset', process.env.CLOUDINARY_CODE);
 
     axios
       .post('https://api.cloudinary.com/v1_1/dh3exwzek/image/upload', formData)
