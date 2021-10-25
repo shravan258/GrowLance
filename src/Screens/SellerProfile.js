@@ -31,7 +31,7 @@ const SellerProfile = () => {
     formData.append('upload_preset', process.env.CLOUDINARY_CODE);
 
     axios
-      .post('https://api.cloudinary.com/v1_1/dh3exwzek/image/upload', formData)
+      .post(`https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_USER_CODE}/image/upload`, formData)
       .then((result) => {
         setimage(result.data.url);
       });
