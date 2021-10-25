@@ -1,0 +1,16 @@
+.content {
+  margin-top: 50px;
+  margin-left: 80px;
+  height: 50%;
+  width: 50%;
+}
+
+.details {
+  margin: 50px;
+}
+
+.back-arrow {
+  border: none;
+  background-color: rgb(228, 228, 228);
+  border-radius: 10px;
+}

@@ -1,0 +1,46 @@
+.form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  background-color: #ffffff;
+  padding: 20px 15px;
+  border-radius: 10px;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.Signup_image{
+  border-radius: 10px;
+}
+
+.btn {
+  margin-bottom: 10px;
+}
+
+.bussiness-growlance-btn {
+  background-color: rgb(86, 61, 124);
+  border: rgb(86, 61, 124);
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+@keyframes movefrom_bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  80% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

@@ -1,0 +1,20 @@
+header {
+  background-color: #24384e;
+}
+
+.navigate {
+  display: inline;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+.navigate:hover {
+  background-color: rgba(18, 137, 253);
+  color: azure;
+  border-radius: 10px;
+}
+
+.username {
+  position: absolute;
+  right: 125px;
+}
