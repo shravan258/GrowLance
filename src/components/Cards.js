@@ -10,21 +10,27 @@ function Cards() {
         Catergories which you might be looking for..
       </h1>
       <div className='cardii'>
+        <h3>Veggies</h3>
         <img src={image} alt='' className='card-image' />
       </div>
       <div className='cardii'>
+        <h3>Dairy Products</h3>
         <img src={image} alt='' className='card-image' />
       </div>
       <div className='cardii'>
+        <h3>Hotels</h3>
         <img src={image} alt='' className='card-image' />
       </div>
       <div className='cardii'>
+        <h3>Chemists</h3>
         <img src={image} alt='' className='card-image' />
       </div>
       <div className='cardii'>
+        <h3>Daily fresh</h3>
         <img src={image} alt='' className='card-image' />
       </div>
       <div className='cardii'>
+        <h3>rice mill</h3>
         <img src={image} alt='' className='card-image' />
       </div>
     </div>
