@@ -29,7 +29,7 @@ const PostDisplay = () => {
   return (
     <div className='container'>
       <div className='container'>
-        <h1 className='display-6'>Eciting offer nearby you..</h1>
+        <h1 className='display-6'>Exciting offer nearby you..</h1>
       </div>
       <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
         {displayProductList.map((product) => (
@@ -40,14 +40,6 @@ const PostDisplay = () => {
               <div className='card-body'>
                 <p className='card-text'>{product.postDesc}</p>
                 <div className='d-flex justify-content-between align-items-center'>
-                  <div className='btn-group'>
-                    <button
-                      type='button'
-                      className='btn btn-lg btn-outline-secondary'
-                    >
-                      View
-                    </button>
-                  </div>
                   <FormControlLabel
                     control={
                       <Checkbox

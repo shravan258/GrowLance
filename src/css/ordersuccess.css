@@ -1,0 +1,18 @@
+.success-order {
+  width: 530px;
+  height: 400px;
+  margin-top: 100px;
+  margin-left: 475px;
+}
+
+.back-to-shop {
+  margin-left: 43%;
+  padding: 10px 15px;
+}
+
+.order-title {
+  position: absolute;
+  margin-left: 40%;
+  margin-top: 90px;
+  color: rgb(131, 131, 131);
+}

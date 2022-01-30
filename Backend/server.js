@@ -13,11 +13,8 @@ const productRoutes = require('./routes/ProductRoutes');
 const uploadRoutes = require('./routes/uploadRoutes');
 const cartRoutes = require('./routes/CartRoutes');
 const OrderRoutes = require('./routes/OrderRoutes');
-const stripe = require('stripe')(
-  'sk_test_51JlTROSDewrnjya5zwyH4pAkBh7ddbkBrwIQoAO49NNRgSFD4CNax70fVoZG7tCLL2HtPhCmwWCSoSW9tzdbyvyk00TWl79qAk'
-);
-
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
+const stripe = require('stripe')(process.env.STRIPE_SECRET_TEST);
 
 const app = express();
 app.use(

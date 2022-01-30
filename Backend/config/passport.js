@@ -9,7 +9,7 @@ customFields = {
 };
 
 const verifyCallBack = (username, password, done) => {
-  console.log(username, password);
+  // console.log(username, password);
   User.findOne({ email: username }, (err, user) => {
     console.log('user', user);
     if (err) throw err;

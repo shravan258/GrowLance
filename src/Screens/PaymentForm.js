@@ -56,7 +56,7 @@ function PaymentForm() {
       try {
         const { id } = paymentMethod;
         const response = await axios.post('http://localhost:4000/payment', {
-          amount: payable_amount,
+          amount: payable_amount * 100,
           id,
         });
         const { success, clientSecret } = response.data;
@@ -71,7 +71,7 @@ function PaymentForm() {
             .then(async (result) => {
               if (result.error) {
                 // Show error to your customer
-                console.log(result.error.message);
+                console.log('e1', result.error.message);
               } else {
                 // The payment succeeded!
                 console.log('payment-success', result.paymentIntent.id);
@@ -83,6 +83,7 @@ function PaymentForm() {
                   userData.finalOrder
                 );
                 console.log(response2.data);
+                history.push('/ordersuccess');
               }
             });
           console.log('Successful payment');
@@ -93,7 +94,10 @@ function PaymentForm() {
         console.log('error', error);
       }
     } else {
-      console.log(error.message);
+      enqueueSnackbar(error.message, {
+        variant: 'error',
+      });
+      console.log('e2', error.message);
     }
   };
 

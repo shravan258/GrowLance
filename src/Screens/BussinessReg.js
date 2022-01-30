@@ -3,9 +3,11 @@ import { useHistory, Link } from 'react-router-dom';
 import logo from '../images/gl.png';
 import bgrow from '../images/bgrow.jpg';
 import axios from 'axios';
+import { useSnackbar } from 'notistack';
 
 function BussinessReg() {
   const history = useHistory();
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const [name, setname] = useState('');
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
@@ -19,20 +21,31 @@ function BussinessReg() {
     setcategory(event.target.value);
   };
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const sellerDetails = {
-      name,
-      email,
-      password,
-      category,
-      bussAddr,
-      bussName,
-      bussType,
-      city,
-    };
+    if (name === '') {
+      enqueueSnackbar('name should not be empty', {
+        variant: 'warning',
+      });
+    }
+    if (email === '') {
+      enqueueSnackbar('email should not be empty', {
+        variant: 'warning',
+      });
+    } else {
+      e.preventDefault();
+      const sellerDetails = {
+        name,
+        email,
+        password,
+        category,
+        bussAddr,
+        bussName,
+        bussType,
+        city,
+      };
 
-    axios.post('http://localhost:4000/seller/register', sellerDetails);
-    history.push('/login');
+      axios.post('http://localhost:4000/seller/register', sellerDetails);
+      history.push('/login');
+    }
   };
   return (
     <div>

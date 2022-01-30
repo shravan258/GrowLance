@@ -17,6 +17,7 @@ import { IconButton } from '@mui/material';
 import DelieveryInfo from './Screens/DelieveryInfo';
 import PaymentForm from './Screens/PaymentForm';
 import StripeContainer from './components/StripeContainer';
+import OrderSuccess from './Screens/OrderSuccess';
 function App() {
   const userData = useContext(DataContext);
   const getUser = async () => {
@@ -65,6 +66,7 @@ function App() {
             <Route exact path='/cart' component={Cart} />
             <Route exact path='/delivery' component={DelieveryInfo} />
             <Route exact path='/payments' component={StripeContainer} />
+            <Route exact path='/ordersuccess' component={OrderSuccess} />
           </Switch>
         </Router>
       </SnackbarProvider>

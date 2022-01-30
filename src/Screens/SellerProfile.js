@@ -5,6 +5,7 @@ import { DataContext } from '../customHooks/DataProvider';
 import '../css/sellerprofile.css';
 import DeleteIcon from '@mui/icons-material/Delete';
 import logo from '../images/gl.png';
+require('dotenv').config();
 
 const SellerProfile = () => {
   const [productList, setproductList] = useState(null);
@@ -15,6 +16,8 @@ const SellerProfile = () => {
   const [p_price, setp_price] = useState('');
   const [p_seller, setp_seller] = useState('');
   const [image, setimage] = useState(null);
+
+  console.log(process.env.REACT_APP_UPLOAD_KEY2);
 
   const userData = useContext(DataContext);
   const history = useHistory();
@@ -28,10 +31,16 @@ const SellerProfile = () => {
     const file = e.target.files[0];
     const formData = new FormData();
     formData.append('file', file);
-    formData.append('upload_preset', 'n9ccgc2q');
+    formData.append(
+      'upload_preset',
+      process.env.REACT_APP_UPLOAD_IMAGE_SECRET_KEY
+    );
 
     axios
-      .post('https://api.cloudinary.com/v1_1/dh3exwzek/image/upload', formData)
+      .post(
+        `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_UPLOAD_KEY2}/image/upload`,
+        formData
+      )
       .then((result) => {
         setimage(result.data.url);
       });
@@ -211,14 +220,6 @@ const SellerProfile = () => {
                         </p>
                         <p className='card-text'>{product.p_seller}</p>
                         <div className='d-flex justify-content-between align-items-center'>
-                          <div className='btn-group'>
-                            <button
-                              type='button'
-                              className='btn btn-lg btn-outline-secondary'
-                            >
-                              View
-                            </button>
-                          </div>
                           <div className='btn-group'>
                             <DeleteIcon fontSize='large' />
                           </div>

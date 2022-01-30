@@ -1,4 +1,5 @@
 .card-container {
+  margin: 50px;
   background-color: rgb(253, 254, 255);
   display: flex;
   justify-content: space-around;
@@ -7,19 +8,25 @@
 
 .cardii {
   border-radius: 10px;
-  margin: 20px;
+  display: flex;
+  margin-bottom: 40px;
+  align-items: center;
   background-color: #e5e5e5;
-  height: 80px;
-  width: 380px;
-  padding: 5px;
+  height: fit-content;
   transition: 0.2s;
+  padding: 5px 5px;
 }
 .card-image {
   border-radius: 10px;
-  height: 100%;
   width: 140px;
 }
 
+.card_text {
+  text-align: center;
+}
+.cardii:hover {
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034);
+}
 .cardii:hover {
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
