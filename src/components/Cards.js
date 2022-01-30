@@ -9,6 +9,7 @@ function Cards() {
       <h1 className='container display-6'>
         Catergories which you might be looking for..
       </h1>
+<<<<<<< HEAD
       <div className=' row cardii'>
         <div className='col-md-6'>
           <img src={image} alt='' className='card-image' />
@@ -72,6 +73,31 @@ function Cards() {
         <div className='col-md-6'>
           <h3 className='card_text'>stationary </h3>
         </div>
+=======
+      <div className='cardii'>
+        <h3>Veggies</h3>
+        <img src={image} alt='' className='card-image' />
+      </div>
+      <div className='cardii'>
+        <h3>Dairy Products</h3>
+        <img src={image} alt='' className='card-image' />
+      </div>
+      <div className='cardii'>
+        <h3>Hotels</h3>
+        <img src={image} alt='' className='card-image' />
+      </div>
+      <div className='cardii'>
+        <h3>Chemists</h3>
+        <img src={image} alt='' className='card-image' />
+      </div>
+      <div className='cardii'>
+        <h3>Daily fresh</h3>
+        <img src={image} alt='' className='card-image' />
+      </div>
+      <div className='cardii'>
+        <h3>rice mill</h3>
+        <img src={image} alt='' className='card-image' />
+>>>>>>> 2d3158f4f829eff397054d651ce11fd344a51061
       </div>
     </div>
   );

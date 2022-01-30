@@ -7,12 +7,19 @@
 }
 
 .cardii {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 5px;
   border-radius: 10px;
   display: flex;
   margin-bottom: 40px;
   align-items: center;
   background-color: #e5e5e5;
+<<<<<<< HEAD
   height: fit-content;
+=======
+>>>>>>> 2d3158f4f829eff397054d651ce11fd344a51061
   transition: 0.2s;
   padding: 5px 5px;
 }

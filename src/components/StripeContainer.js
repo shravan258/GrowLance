@@ -4,7 +4,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import PaymentForm from '../Screens/PaymentForm';
 
 const PUBLIC_KEY =
-  'pk_test_51JlTROSDewrnjya5fALck9USofeJWO7hhf6AhIeVTRcPymbonIIaPZC6fTV3GXP4otnNL8e0rW3nxfFEAYQu4Gw100nEo8s7qJ';
+  process.env.STRIPE_PUBLIC_KEY;
 
 const stripePromise = loadStripe(PUBLIC_KEY);
 function StripeContainer() {
