@@ -9,9 +9,9 @@ header {
 }
 
 .navigate:hover {
-  background-color: rgba(18, 137, 253);
+  border-bottom: 2px solid rgba(18, 137, 253);
   color: azure;
-  border-radius: 10px;
+  cursor: pointer;
 }
 
 .username {
