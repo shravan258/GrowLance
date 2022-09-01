@@ -28,7 +28,12 @@ const Favourites = () => {
           finalFav.map((product) => (
             <div className='fav-card col ' key={product.postid}>
               <div className='card '>
-                <img src={product.postImage} alt='' height='225' />
+                <img
+                  src={product.postImage}
+                  alt=''
+                  // height='225'
+                  className='fav-image'
+                />
                 <title>Placeholder</title>
                 <div className='card-body'>
                   <p className='card-text'>{product.postDesc}</p>

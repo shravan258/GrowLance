@@ -31,23 +31,25 @@ const SellerProfile = () => {
     const file = e.target.files[0];
     const formData = new FormData();
     formData.append('file', file);
-<<<<<<< HEAD
+
     formData.append(
       'upload_preset',
       process.env.REACT_APP_UPLOAD_IMAGE_SECRET_KEY
     );
 
-    axios
-      .post(
-        `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_UPLOAD_KEY2}/image/upload`,
-        formData
-      )
-=======
+    axios.post(
+      `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_UPLOAD_KEY2}/image/upload`,
+      formData
+    );
+
     formData.append('upload_preset', process.env.CLOUDINARY_CODE);
 
     axios
-      .post(`https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_USER_CODE}/image/upload`, formData)
->>>>>>> 2d3158f4f829eff397054d651ce11fd344a51061
+      .post(
+        `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_USER_CODE}/image/upload`,
+        formData
+      )
+
       .then((result) => {
         setimage(result.data.url);
       });

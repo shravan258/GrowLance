@@ -9,14 +9,44 @@ import { DataContext } from '../customHooks/DataProvider';
 import axios from 'axios';
 import CloseIcon from '@mui/icons-material/Close';
 import { useSnackbar } from 'notistack';
+import CameraAltIcon from '@mui/icons-material/CameraAlt';
 
 function HomePage() {
   const [searchTerm, setsearchTerm] = useState('');
   const [searchResults, setsearchResults] = useState([]);
   const [cartitems, setcartitems] = useState([]);
+  const [searchImage, setsearchImage] = useState('');
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
   const userData = useContext(DataContext);
+  const uploadImage = async (e) => {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append('file', file);
+
+    formData.append(
+      'upload_preset',
+      process.env.REACT_APP_UPLOAD_IMAGE_SECRET_KEY
+    );
+
+    const response = await axios.post(
+      `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_UPLOAD_KEY2}/image/upload`,
+      formData
+    );
+    const url = response.data.url;
+    setsearchImage(url);
+
+    axios
+      .get('http://localhost:5000/predict', {
+        params: {
+          Link: `${url}`,
+        },
+      })
+      .then((result) => setsearchTerm(result.data))
+      .catch((err) => console.log(err));
+  };
+
+  console.log(searchImage);
 
   const getSearchedProducts = async (e) => {
     e.preventDefault();
@@ -75,6 +105,15 @@ function HomePage() {
                 value={searchTerm}
                 onChange={(event) => setsearchTerm(event.target.value)}
               />
+              <label htmlFor='imgsearch'>
+                <CameraAltIcon className='camera-search' fontSize='medium' />
+              </label>
+              <input
+                type='file'
+                id='imgsearch'
+                style={{ display: 'none' }}
+                onChange={uploadImage}
+              />
               <button
                 type='button'
                 for='search'
@@ -89,7 +128,7 @@ function HomePage() {
       </div>
       {searchResults.length === 0 ? (
         <div>
-          <Cards />
+          {/* <Cards /> */}
           <PostDisplay />
         </div>
       ) : (

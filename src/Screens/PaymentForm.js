@@ -60,9 +60,9 @@ function PaymentForm() {
           id,
         });
         const { success, clientSecret } = response.data;
-        console.log(response.data);
+        console.log('[4000-payment]', response.data);
         if (success) {
-          const { error } = await stripe
+          stripe
             .confirmCardPayment(clientSecret, {
               payment_method: {
                 card,
@@ -119,7 +119,7 @@ function PaymentForm() {
             className='form-control'
             id='cc-name'
             placeholder=''
-            required=''
+            required='true'
           />
 
           <div class='invalid-feedback'>Name on card is required</div>

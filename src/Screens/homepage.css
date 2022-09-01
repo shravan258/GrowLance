@@ -42,6 +42,12 @@
   animation: movefrom_left 2s ease;
 }
 
+.camera-search {
+  margin-left: -80px;
+
+  color: #24384e;
+}
+
 .search-container {
   margin-top: 10px;
   cursor: pointer;

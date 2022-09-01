@@ -17,7 +17,13 @@ router.route('/').get((req, res) => {
 router.route('/search').get((req, res) => {
   const searchValue = req.query.searchValue;
   Product.find(
-    { $or: [{ productName: searchValue }, { p_seller: searchValue }] },
+    {
+      $or: [
+        { productName: searchValue },
+        { p_seller: searchValue },
+        { p_category: searchValue },
+      ],
+    },
     function (err, result) {
       if (err) {
         res.send(err);
